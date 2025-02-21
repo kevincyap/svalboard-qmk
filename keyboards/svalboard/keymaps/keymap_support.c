@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifdef POINTING_DEVICE_AUTO_MOUSE_ENABLE
 void pointing_device_init_user(void) {
     set_auto_mouse_layer(MH_AUTO_BUTTONS_LAYER); // only required if AUTO_MOUSE_DEFAULT_LAYER is not set to index of <mouse_layer>
-    set_auto_mouse_enable(true);         // always required before the auto mouse feature will work
+    set_auto_mouse_enable(false);         // always required before the auto mouse feature will work
 }
 #endif
 
@@ -383,14 +383,14 @@ void matrix_scan_kb(void) {
 }
 
 void mouse_mode(bool on) {
-    if (on) {
-        layer_on(MH_AUTO_BUTTONS_LAYER);
-        mh_auto_buttons_timer = timer_read();
-        mouse_mode_enabled = true;
-    } else {
-        layer_off(MH_AUTO_BUTTONS_LAYER);
-        mh_auto_buttons_timer = 0;
-        mouse_mode_enabled = false;
-        mouse_keys_pressed = 0;
-    }
+    // if (on) {
+    //     layer_on(MH_AUTO_BUTTONS_LAYER);
+    //     mh_auto_buttons_timer = timer_read();
+    //     mouse_mode_enabled = true;
+    // } else {
+    //     layer_off(MH_AUTO_BUTTONS_LAYER);
+    //     mh_auto_buttons_timer = 0;
+    //     mouse_mode_enabled = false;
+    //     mouse_keys_pressed = 0;
+    // }
 }
